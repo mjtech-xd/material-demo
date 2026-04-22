@@ -10,7 +10,7 @@ html {
   @include mat.theme(
     (
       color: (
-        primary: mat.$blue-palette,
+        primary: mat.$azure-palette,
         tertiary: mat.$green-palette,
       ),
       typography: Roboto,
@@ -37,18 +37,17 @@ body {
   height: 100%;
 }
 
-.warn 
-{
-  @include mat.theme((
-  color: mat.$red-palette,
-  ));
+.warn {
+  color: var(--mat-sys-error) !important;
 }
 
-.accent 
-{
-  @include mat.theme((
-  color: mat.$rose-palette,
-  ));
+.accent {
+  color: var(--mat-sys-tertiary) !important;
+}
+
+.primary-toolbar {
+  --mat-toolbar-container-background-color: var(--mat-sys-primary);
+  --mat-toolbar-container-text-color: var(--mat-sys-on-primary);
 }
 
 

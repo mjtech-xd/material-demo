@@ -1,22 +1,41 @@
-<div class ="container">
-  <mat-card appearance="raised" class ="example-card" style ="max-width: 300px;">
-    <mat-card-header>
-      <div mat-card-avatar class="example-avatar"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-    <mat-card-footer>
-      <p class ="footer-text">Updated 2 mins ago</p>
-    </mat-card-footer>
-  </mat-card>
-</div>
+<mat-toolbar class = "primary-toolbar">
+  <button mat-icon-button (click) ="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Task Flow</span>
+
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>account_circle</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav opened mode ="side" #sidenav>
+    <button mat-button class ="nav-item">
+      <mat-icon>dashboard</mat-icon>
+      Dashboard
+    </button> 
+    <button mat-button class ="nav-item">
+      <mat-icon>check_circle</mat-icon>
+      My Tasks
+    </button> 
+    <button mat-button class ="nav-item">
+      <mat-icon>calendar_today</mat-icon>
+      Calendar
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-button class ="nav-item">
+      <mat-icon>settings</mat-icon>
+      Settings
+    </button> 
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class ="content">
+      <h1>Welcome to Task Flow</h1>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
