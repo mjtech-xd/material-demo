@@ -7,16 +7,19 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmDialog } from './confirm-dialog/confirm-dialog';
+import {MatSnackBar, MatSnackBarModule, MatSnackBarRef, TextOnlySnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
   selector: 'app-root',
-  imports: [MatButtonModule, MatIconModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatDividerModule, MatDialogModule],
+  imports: [MatButtonModule, MatIconModule, MatCardModule, MatToolbarModule, MatSidenavModule, MatDividerModule, MatDialogModule, MatSnackBarModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   private dialog = inject(MatDialog);
+  private snackBar = inject(MatSnackBar);
+
 
   openConfirmDialog()
   {
@@ -31,7 +34,22 @@ export class App {
       next : (result:any) => {
         if(result)
         {
-          console.log('User Confirmed deletion');
+          //console.log('User Confirmed deletion');
+          const snackBarRef: MatSnackBarRef<TextOnlySnackBar> = this.snackBar.open(
+            "Task Deleted Successfully.",
+            'Undo',
+            {
+              duration: 3000,
+              horizontalPosition:'end',
+              verticalPosition:'top',
+              panelClass: ['success-snackbar']
+            });
+
+          snackBarRef.onAction().subscribe({
+            next: () =>{
+              console.log('Undo Clicked - restoring the task');
+            }
+          });
         }
     }
   });
