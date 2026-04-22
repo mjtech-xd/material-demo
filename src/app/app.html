@@ -13,7 +13,7 @@
   </button>
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav opened mode ="side" #sidenav>
+  <mat-sidenav mode ="side" #sidenav>
     <button mat-button class ="nav-item">
       <mat-icon>dashboard</mat-icon>
       Dashboard
@@ -36,6 +36,7 @@
   <mat-sidenav-content>
     <div class ="content">
       <h1>Welcome to Task Flow</h1>
+      <button mat-flat-button (click) ="openConfirmDialog()" class ="warn">Delete Task</button>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

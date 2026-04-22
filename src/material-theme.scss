@@ -38,7 +38,8 @@ body {
 }
 
 .warn {
-  color: var(--mat-sys-error) !important;
+  background-color: var(--mat-sys-error) !important;
+  color: white !important;
 }
 
 .accent {

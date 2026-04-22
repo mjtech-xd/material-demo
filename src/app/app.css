@@ -40,4 +40,10 @@ mat-sidenav{
     width: 100%;
     justify-content: flex-start;
     padding: 8px 16px;
-    gap: 16px;}
+    gap: 16px;
+}
+
+.warn {
+    background-color: var(--mat-sys-error) !important;
+    color: white !important;
+}
