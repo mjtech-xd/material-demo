@@ -51,4 +51,26 @@ body {
   --mat-toolbar-container-text-color: var(--mat-sys-on-primary);
 }
 
+.success-snackbar{
+  @include mat.snack-bar-overrides((
+    container-color: #4caf50,
+    supporting-text-color: white,
+    button-color: white,
+  ))
+}
 
+.error-snackbar{
+  @include mat.snack-bar-overrides((
+    container-color: #4caf50,
+    supporting-text-color: white,
+    button-color: white,
+  ));
+}
+
+.warning-snackbar{
+  @include mat.snack-bar-overrides((
+    container-color: #ff9800,
+    supporting-text-color: white,
+    button-color: white,
+  ));
+}
